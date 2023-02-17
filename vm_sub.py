@@ -14,11 +14,9 @@ def on_connect(client, userdata, flags, rc):
 
     print("Connected to server (i.e., broker) with result code "+str(rc))
     #replace user with your USC username in all subscriptions
-    client.subscribe("user/ipinfo")
-    
+    client.subscribe("mianjunz/ipinfo")
     #Add the custom callbacks by indicating the topic and the name of the callback handle
-    client.message_callback_add("user/ipinfo", on_message_from_ipinfo)
-
+    client.message_callback_add("mianjunz/ipinfo", on_message_from_ipinfo)
 
 """This object (functions are objects!) serves as the default callback for 
 messages received when another node publishes a message this client is 
